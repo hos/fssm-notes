@@ -1,0 +1,571 @@
+\documentclass[a5paper,twosided,11pt,DIV=15,BCOR=0mm]{scrbook}
+%
+% hippopotato
+\usepackage{localsettings}
+\usepackage{cancel}
+%
+% lazyeqn - math symbols
+\usepackage{./lazyeqn/lazyeqn}
+\usepackage{hyperref}
+%
+\newcommand{\veps}{\vareps}
+\newcommand{\ext}{\ensuremath{\textup{ext}}}
+\newcommand{\inte}{\ensuremath{\textup{int}}}
+\newcommand{\rhoz}{\tfrac{1}{\rho_0}}
+%
+\newcommand{\rtwo}{\UI\hspace{-0.07em}\UI}
+\newcommand{\rthree}{\UI\hspace{-0.07em}\UI\hspace{-0.07em}\UI}
+%
+% \def\mybox#1{\fbox{%
+%     \addtolength{\linewidth}{-2\fboxsep}%
+%     \addtolength{\linewidth}{-2\fboxrule}%
+%     \begin{minipage}[t]{\linewidth}%
+%       % \vspace{-0.6em}%
+%       #1%
+%       % \vspace{0.5em}%
+%     \end{minipage}%
+%   }%
+% }
+% \def\myboxeqn#1{\fbox{%
+%     \addtolength{\linewidth}{-2\fboxsep}%
+%     \addtolength{\linewidth}{-2\fboxrule}%
+%     \begin{minipage}[t]{\linewidth}%
+%       \vspace{-0.6em}%
+%       #1%
+%       \vspace{-1em}%
+%     \end{minipage}%
+%   }%
+% }
+%
+\raggedbottom
+%
+% \setlist{nolistsep,leftmargin=*}
+%
+% Fonts
+%\usepackage[garamond]{mathdesign}
+%\usepackage{times}
+%\usepackage{pxfonts}%ccfonts,times,mathpazo,mathpple
+\usepackage[T1]{fontenc}
+%
+% Search directory for image files
+\graphicspath{{./img/}}
+%
+%
+% Define BibTeX command
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+\title{Foundations of Single and Multiphasic Materials}
+\author{Instructor: \\Digitized: H. Onur Solmaz, BSc}
+%
+% -----------------------------------------------------------------------
+%
+\begin{document}
+%
+\maketitle
+\tableofcontents
+\newpage
+{\footnotesize
+\subsection*{About C1: Continuum Mechanics}
+Continuum-mechanical knowledge is the fundamental basis for the computation of
+deformation processes of solid materials. Based on the methods of tensor
+calculus, the lecture offers the following content:
+%
+\begin{itemize}
+\item Vector and Tensor Algebra: symbols, spaces, products, specific
+  tensors and definitions Vector and Tensor Analysis: functions of scalar-,
+  vector- and tensor-valued variables, integral theorem (e. g., after Gauss or
+  Stokes)
+\item Foundations of Continuum Mechanics: kinematics and deformation, forces and
+  stress concepts: Cauchy’s lemma and theorem, Cauchy, Kirchhoff and
+  Piola-Kirchhoff stress tensors
+\item Fundamental Balance Laws: master balance, axiomatic balance relations of
+  mechanics (mass balance, momentum and angular momentum balances)
+\item Related Balance Laws and Concepts: balance of mechanical energy, stress
+  power and the concept of conjugate variables, d’Alembert’s principle and the
+  principle of virtual work
+\item Numerical Aspects of Continuum Mechanics: strong and weak formulation of
+  the boundary-value problem
+\item The Closure Problem of Mechanics: finite elasticity of solid mechanics (as
+  an example), linearization of the field equations
+\end{itemize}
+\subsection*{About E2-01: Foundations of Single- and Multiphasic Materials}
+The description of material behaviour under realistic 3-dimensional behaviour is
+the fundamental basis for the computation of deformation processes of solid
+materials and coupled deformation and flow processes in porous media. Based on
+the methods of continuum mechanics, the lecture offers the following content:
+%
+\begin{itemize}
+\item Thermodynamic Balance Laws: balance of energy, entropy inequality,
+  thermodynamic potentials, application to finite thermoelasticity
+\item Geometrically Linear Thermoelasticity: linearization of the finite
+  problem, inversion of the linear law of thermoelasticity, determination of
+  material parameters
+\item Geometrically Linear Viscoelasticity: motivation and basic model rheology,
+  the standard model of viscoelasticity (Poynting-Thomson model),
+  Clausius-Planck inequality and internal dissipation, the viscoelastic solid
+\item Geometrically Linear Elasto-Plasticity: motivation and basic model
+  rheology, metal plasticity, generalised and geomaterials plasticity
+\item Foundations of Multiphasic Materials: homogenisation, basic ideas and
+  concepts
+\item Hydraulics in Porous Materials: basic concepts, mechanical balance
+  relations, constitutive equations, Darcy’s filter law
+\end{itemize}
+}
+\chapter{Vector and Tensor Algebra}
+\section{Symbols}
+\begin{tabular}{@{}lll@{}}
+$u_i$ & $\Rightarrow$ & $u_1, u_2, u_3$ \\
+$u_iv_k$ & $\Rightarrow$ & $u_1v_1, u_1v_2, u_1v_3, u_2v_1, u_2v_2, u_2v_3 \ldots$ \\
+$t_{ik}$ & $\Rightarrow$ & $t_{11}, t_{12}, t_{13}, t_{21}, t_{22}, t_{23} \ldots$ \\
+\end{tabular}
+%
+\section{Einstein's Summation Convention}
+%
+$u_jv_j := \sum\limits_{j=1}^N u_jv_j = u_1v_1 + u_2v_2 + \ldots + u_Nv_N$
+%
+\section{Kronecker (Delta) Symbol}
+%
+\begin{equation}
+  \delta_{ij} = \left\{
+    \begin{array}{l l}
+      1 & \quad \text{if $i=k$}\\
+      0 & \quad \text{if $i\neq k$}
+    \end{array} \right.
+\end{equation}
+%
+%
+\chapter{Kinematics}
+%
+\chapter{Stress Concepts}
+%
+\chapter{Fundamental Balance Law}
+%
+\chapter{Closure Problem}
+%
+%
+\rule{0.3\linewidth}{0.25pt}
+End of semester 1
+%
+\chapter{Thermodynamical Balance Laws}
+\section{Balance of Energy}
+%
+\begin{equation}
+  \ddt \sbr{E(\CB,t)+K(\CB,t)} = P_{\ext}(\CB,t)+Q_{\ext}(\CB,t)
+\end{equation}
+\begin{equation}
+ \rho\dot{\veps} = \VT\cdot\VL - \div \Vq + \rho r
+\end{equation}
+%
+\section{Balance of Entropy}
+\begin{alignat*}{3}
+  & \eta(\CP,t) && = \eta(\Vx, t) && \textrm{: mass specific entropy}\\
+  & H(\CB,t) && = \int_\CV\rho\eta\dv\,\, && \textrm{: entropy of }\CB
+\end{alignat*}
+%
+\begin{equation}
+  \dot{H} = \frac{Q}{\theta}
+\end{equation}
+Processes are
+\begin{itemize*}
+\item reversible, if $\int \frac{Q}{\theta} \dt = 0$
+\item irreversible, if $\int \frac{Q}{\theta} \dt > 0$
+\end{itemize*}
+\begin{align}
+  S_\ext(\CB,t) &= \int_\CS\Bphi_\eta\cdot\Vn\da + \int_\CV\sigma_\eta\dv \\
+  S_\inte (\CB,t) &= \int_\CV\hat{\eta}\dv
+\end{align}
+\begin{alignat*}{3}
+  & \Bphi_\eta && := -\frac{1}{\theta}\Vq && \textrm{: heat influx/temperature}\\
+  & \sigma_\eta && := \frac{\rho r}{\theta} && \textrm{: heat supply/temperature}\\
+  & \hat{\eta}(\CP,t) && := \hat{\eta}(\Vx,t)\quad && \textrm{: volume specific
+    entropy production}
+\end{alignat*}
+%
+Global form:
+\begin{equation}
+    \ddt H(\CB,t) = S_\ext(\CB,t) + S_\inte(\CB,t)
+\end{equation}
+Local form is obtained by substituting the variables
+\begin{equation}
+ \rho \dot{\eta} = -\div\rbr{\frac{\Vq}{\theta}} + \frac{\rho r}{\theta} + \hat{\eta}
+\end{equation}
+2\textsuperscript{nd} Law dictates
+\begin{equation}
+\hat{\eta} \geq 0  \Rightarrow  \rho \dot{\eta} +\div\rbr{\frac{\Vq}{\theta}} -
+  \frac{\rho r}{\theta} \geq 0
+\end{equation}
+After substitution of energy balance and Legendre transformation:
+\begin{equation}
+-\rho\rbr{\dot{\Psi} + \dot{\theta}\eta} + \VT\cdot\VL -
+  \frac{1}{\theta}\Vq\cdot\grad\theta \geq 0
+\end{equation}
+%
+\section{Thermodynamic Potentials}
+%
+\subsection{Internal Energy $\veps(\CP,t)$}
+\begin{equation}
+  \veps(\CP,t) = \veps(\Vx,t) = \veps(
+    \underbrace{\VE(\Vx,t)}_\text{strain},
+    \underbrace{\eta(\Vx,t)}_\text{entropy})
+\end{equation}
+Consequence:
+\begin{equation}
+  \dot{\veps} = \partd{\veps}{\VE}\cdot\dot{\VE}
+  + \partd{\veps}{\eta}\dot{\eta}
+  = \rhoz\VS\cdot\dot{\VE} + \theta\dot{\eta}
+\end{equation}
+  where $\rhoz\VS = \partd{\veps}{\VE}$ and $\theta = \partd{\veps}{\eta}$.
+\subsubsection{Relation between  $\veps(\VE,\eta)$, the elastic potential $u(\VE)$ and the
+internal stress power $w(\Vx,t)$}
+\begin{equation}
+  u(\VE) = \rho_0 \veps(\VE,\eta)\evat_{\eta=\textrm{const.}}
+\end{equation}
+The stress:
+\begin{align}
+  \VS = \deriv{u}{\VE} &= \partd{(\rho_0\veps|_{\eta=\textrm{const.}})}{\VE} =
+  \rho_0\partd{(\veps|_{\eta=\textrm{const.}})}{\VE}\\
+  &\Rightarrow \rhoz\VS = \partd{(\veps|_{\eta=\textrm{const.}})}{\VE} = \partd{\veps}{\VE}
+\end{align}
+Stress power:
+\begin{align}
+\dot{u}(\VE) &= \linedot{\rho_0 \veps(\VE,\eta)|_{\eta=\textrm{const.}}} \\
+& = w(\Vx,t) = \VS\cdot\dot{\VE} = \deriv{u}{\VE}\cdot\dot{\VE}
+  = \rho_0\partd{\veps}{\VE}\cdot\dot{\VE}
+\end{align}
+Conjugate pairs: $\cbr{\rhoz\VS,\VE}$ and $\cbr{\theta, \eta}$.
+%
+\subsection{Helmholtz Free Energy $\Psi(\CP,t)$}
+Legendre transformation:
+\begin{equation}
+  \Psi(\VE,\theta) = \veps(\VE,\eta) - \theta\eta
+\end{equation}
+Consequence:
+\begin{equation}
+  \dot{\Psi}(\VE,\theta)
+  = \partd{\Psi}{\VE}\cdot\dot{\VE} + \partd{\Psi}{\theta}\dot{\theta}
+  = \rhoz\VS\cdot\dot{\VE} - \eta\dot{\theta}
+\end{equation}
+where $\rhoz\VS = \partd{\veps}{\VE}  = \partd{\Psi}{\VE}$ and
+  $\theta = \partd{\veps}{\eta} \Leftrightarrow \eta = -\partd{\Psi}{\theta}$
+\subsection{Enthalpy $\zeta(\CP,t)$}
+Legendre transformation:
+\begin{equation}
+  \zeta(\rhoz\VS,\eta) = \veps(\VE,\eta) - \rhoz\VS\cdot\VE
+\end{equation}
+Consequence:
+\begin{equation}
+\dot{\zeta}(\rhoz\VS,\eta) = \partd{\zeta}{\rhoz\VS}\cdot+\partd{\zeta}{\eta}\dot{\eta}
+= - \VE \cdot \rhoz\dot{\VS}+\theta\dot{\eta}
+\end{equation}
+where $\theta=\partd{\veps}{\eta}=\partd{\zeta}{\eta}$ and
+$\VE=-\rho_0\partd{\zeta}{\VS}\Leftrightarrow\rhoz\VS=\partd{\veps}{\VE}$
+\subsection{Gibbs' Free Enthalpy $\xi(\CP,t)$}
+Legendre transformation:
+\begin{equation}
+  \xi(\rhoz\VS,\theta)=\Psi(\VE,\theta)-\rhoz\VS\cdot\VE
+\end{equation}
+Consequence:
+\begin{equation}
+\textstyle
+    \dot{\xi}(\rhoz\VS,\theta) =
+    \partd{\xi}{\rhoz\VS}\cdot\linedot{\rhoz\VS}+\partd{\xi}{\theta}\dot{\theta}
+    =-\VE\cdot\rhoz\dot{\VS}-\eta\dot{\theta}
+\end{equation}
+where $\eta=-\partd{\Psi}{\theta} = -\partd{\xi}{\theta}$ and
+$\VE=-\rho_0\partd{\xi}{\VS}\Leftrightarrow\rhoz\VS=\partd{\Psi}{\VE}$.
+\subsection{Relationships Between the Potentials}
+\begin{figure}[htbp]
+  \centering
+  \begin{alignat*}{3}
+    &\boxed{\veps                }      && \Rightarrow -\rhoz\VS\cdot\VE      &\boxed{\zeta=\veps-\rhoz\VS\cdot\VE}\\
+    &      \Uparrow +\theta\eta         &&                                    & \Downarrow -\theta\eta \\
+    &\boxed{\Psi=\veps-\theta\eta} \quad&& \Leftarrow +\rhoz\VS\cdot\VE \quad&
+    \boxed{\xi=\veps-\theta\eta-\rhoz\VS\cdot\VE}
+  \end{alignat*}
+  \caption{Legendre transformations between the potentials}
+  \label{fig:legendre}
+\end{figure}
+% \begin{tabular}{l l l}
+%   $\veps$ & $\Rightarrow -\rhoz\VS\cdot\VE$ &$\zeta=\veps-\rhoz\VS\cdot\VE$\vspace{0.5em}\\
+%   $\Uparrow +\theta\eta$ & & $\Downarrow -\theta\eta$ \\[0.5em]
+%   $\Psi=\veps-\theta\eta$ & $\Leftarrow +\rhoz\VS\cdot\VE$ & $\xi=\veps-\theta\eta-\rhoz\VS\cdot\VE$\\
+% \end{tabular}
+Identities for thermodynamic potentials:
+\begin{itemize}
+\item Motivated by the pair $\cbr{\rhoz\VS,\VE}$:
+  \begin{equation}
+    \veps-\zeta=\Psi-\xi=\rhoz\VS\cdot\VE
+    \Leftrightarrow (\veps-\zeta)-(\Psi-\xi) = 0
+  \end{equation}
+\item  Motivated by the pair $\cbr{\eta,\theta}$:
+  \begin{equation}
+    \veps-\Psi=\zeta-\xi=\theta\eta
+    \Leftrightarrow (\veps-\Psi)-(\zeta-\xi) = 0
+  \end{equation}
+\end{itemize}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Finite Strain Thermoelasticity}
+Conjugate pairs $\cbr{\rhoz\VS,\VE}$ and $\cbr{\eta,\theta}$ are used.
+%
+\begin{subequations}
+  \begin{alignat}{2}
+    &  \text{momentum balance:  }&&\rho\ddot{\Vx}=\div \VT + \rho\Vb\\
+    &  \text{energy balance:    }&&\rho\dot{\veps}=\VT\cdot\VL-\div\Vq+\rho r\\
+    & \text{entropy inequality:}&&\textstyle-\rho(\dot{\Psi} + \dot{\theta}\eta)
+    + \VT\cdot\VL - \frac{1}{\theta}\Vq\cdot\grad\theta \geq 0
+  \end{alignat}
+\end{subequations}
+%
+Description is fully Lagrangian with a solid reference configuration. Above
+yields
+\begin{subequations}
+  \begin{alignat}{2}
+    &\text{momentum balance:  }&&\rho_0\ddot{\Vx}=\Div(\VF\VS) + \rho_0\Vb\\
+    &\text{energy balance:    }&&\rho_0\dot{\veps}=\VS\cdot\dot{\VE}-\Div\Vq_0+\rho_0 r\\
+    &\text{entropy inequality:}&&\textstyle-\rho_0(\dot{\Psi} + \dot{\theta}\eta) +
+    \VS\cdot\dot{\VE} - \frac{1}{\theta}\Vq_0\cdot\Grad\theta \geq 0
+  \end{alignat}
+\end{subequations}
+%
+Used identities:
+\begin{align*}
+ \rho&=\rho_0\rbr{\det\VF}^{-1}\\
+ \div\VT&=(\det\VF)^{-1}\Div(\VF\VS)\\
+ \VT\cdot\VL&=(\det\VF)^{-1}\VS\cdot\dot{\VE}\\
+ \Vq&=(\det\VF)^{-1}\VF\Vq_0\\
+ \div\Vq&=(\dev\VF)^{-1}\Div \Vq_0
+\end{align*}
+\section{Basic Principles}
+\subsection{Determinism [Noll, 1958]}
+\subsection{Equipresence [Truesdell, 1949]}
+\subsection{Local Action [Noll, 1958]}
+\subsection{Material Frame Indifference [Noll,1955]}
+%
+\section{Evolution of the Entropy Inequality (Dissipation)}
+\begin{multline}
+  - \rho_0\rbr{\eta+\partd{\Psi}{\theta}}\dot{\theta}
+  + \rbr{\VS-\rho_0\partd{\Psi}{\VE}}\cdot\dot{\VE}\\
+  - \rho_0\partd{\Psi}{\Grad\theta}\cdot\Grad\theta
+  - \frac{1}{\theta}\Vq_0\cdot\Grad\theta \geq 0
+\end{multline}
+For arbitrary admissible processes:
+\begin{subequations}
+  \begin{align}
+    \eta&=-\partd{\Psi}{\theta}\\
+    \VS&=\rho_0\partd{\Psi}{\VE}\\
+    \Vzero &= \partd{\Psi}{\Grad\theta}
+  \end{align}
+\end{subequations}
+leading to the dissipation inequality:
+%
+\begin{equation}
+  \CD := -\frac{1}{\theta}\Vq_o\cdot\Grad\theta \geq 0
+\end{equation}
+%
+Satisfied with Fourier's law:
+\begin{equation}
+  \Vq_0=-k\Grad\theta
+\end{equation}
+%
+\section{Specific Cases and Resulting Simplifications}
+\subsection{Rigid Body Motion}
+R.B.M. function:
+\begin{equation}
+  \Vx(\VX,t)=\VQ(t)\VX + \VK(t) \label{eq:rbm0}
+\end{equation}
+where $\VQ$ is orthogonal: $\VQ^{-1}=\VQ\tra$.
+%
+Deformation gradient: $\VF=\Grad\Vx=\VQ(t)$, $\dot{\VF}=\dot{\VQ}$
+%
+First, show that
+\begin{equation}
+  \VL\tra=(\dot{\VF}\VF^{-1})\tra=\VF\tra[-]\dot{\VF}\tra=\VQ\tra[-]\dot{\VQ}\tra
+  =\VQ\dot{\VQ}^{-1}=\VF\dot{\VF}^{-1}\label{eq:rbm1}
+\end{equation}
+%
+Secondly, continue from the identity $\VI=\VF\VF^{-1}$.
+Its derivative becomes, using (\ref{eq:rbm1})
+\begin{equation}
+  \dot{\VI} = \underbrace{\dot{\VF}\VF^{-1}}_\text{$\VL$}
+  + \underbrace{\VF\linedot{\VF^{-1}}}_\text{$\VL\tra$} = 0 \label{eq:rbm2}
+\end{equation}
+%
+Hence
+\begin{equation}
+  \VL + \VL\tra = 0\quad\textup{\underline{with r.b.m.!!!}} \label{eq:rbm3}
+\end{equation}
+and this identity can help reduce many formulations. For example
+$\VD$ was defined as $\VD=\sym(\VL)=\half(\VL+\VL\tra)$. This means
+%
+\begin{equation}
+\VD=\Vzero \eqand \UI_D=\rtwo_D=0 \label{eq:rbm4}
+\end{equation}
+%
+\subsection{Incompressibility}
+%
+The amount of mass is constant. Incompressibility means that the volume also
+does not change, hence density remains constant:
+\begin{equation}
+  \rho:\textup{constant} \quadd{\rightarrow} \dot{\rho}=0
+\end{equation}
+%
+The mass balance equation becomes
+\begin{equation}
+\cancelto{0}{\dot{\rho}}+\rho\,\div\dot{\Vx}= 0 \quadd{\Rightarrow}
+\div\dot{\Vx} = \VL\cdot\VI = \VD\cdot\VI = 0
+\end{equation}
+%
+\subsection{Adiabatic Process}
+\begin{equation}
+  r=0 \eqand \Vq=\Vzero
+\end{equation}
+Thus the energy balance becomes
+%
+\begin{equation}
+  \rho\dot{\veps} = \VT\cdot\VL
+\end{equation}
+%
+\subsection{Quasi-static Conditions}
+\begin{equation}
+  \deriv{K}{t} = 0
+\end{equation}
+\subsection{Isothermal Process}
+\begin{equation}
+  \dot{\theta} = 0
+\end{equation}
+\subsection{Isentropic Process}
+\begin{equation}
+  \dot{\eta} = 0
+\end{equation}
+\section{Examples of Constitutive Laws}
+\subsection{Nonlinear Free Energy -- Extension of Simo--Pister Law}
+\begin{align}
+  \nonumber \rho_0\Psi(\VE,\theta)&\rightarrow\rho_0\Psi(\UI_C,\rthree_c,\theta)\\
+  \nonumber &=\half\mu(\UI_C-3)+(m\Delta\theta-\mu)\ln(\rthree_c)^{1/2} \\
+  & + \half\lambda[\ln(\rthree_c)^{1/2}]^2-
+    \rho_0 c_v(\theta\ln\tfrac{\theta}{\theta_0}-\Delta\theta)
+\end{align}
+%
+$\mu,\lambda$:~Lam\`e constants,
+$c_v$:~specific heat at constant volume,
+$m$:~stress-temperature modulus ($m=-(2\mu+3\lambda)\,\alpha = -3\kappa\alpha$, $\alpha$:~coeff of
+thermal expansion, $\kappa$:~compression modulus)
+Stress becomes
+\begin{equation}
+  \textstyle\VS=\rho_0\partd{\Psi}{\VE} = 2\rho_0\partd{\Psi}{\VC}
+  = 2\rho_0 (\partd{\Psi}{\UI_C}\VI+\det\VC\partd{\Psi}{\rthree_C}\VC^{-1})
+\end{equation}
+Eventually
+\begin{equation}
+  \VS = 2\mu\,\VK^R+\lambda\ln(\det\VF)\,\VC^{-1}+m\Div\Grad\theta\,\VC^{-1}
+\end{equation}
+%
+Entropy becomes
+\begin{equation}
+  \rho_0\theta\dot{\eta} = \rho_0c_v\dot{\theta}-m\theta(\dot{\VE}\cdot\VC^{-1})
+\end{equation}
+%
+Energy becomes
+\begin{equation}
+  \rho_oc_v\dot{\theta} = m\theta\,(\dot{\VE}\cdot\VC^{-1})
+  -\Div\Vq_0 + \rho_0\,r\label{eq:simoenergy}
+\end{equation}
+(\ref{eq:simoenergy}) is called the equation of thermal conduction.
+%
+An \underline{adiabatic system} ($-\Div\Vq_0 + \rho_0\,r=0$) yields
+\begin{equation}
+  \rho_oc_v\dot{\theta} = m\theta\,(\dot{\VE}\cdot\VC^{-1}) \quad\textup{or}\quad
+  \theta\dot{\eta}=0
+\end{equation}
+For a hyperelastic material ($m=0$), substituting $\Vq_0$ from previously defined Fourier's Law:
+\begin{equation}
+  c_v\dot{\theta} = \frac{k}{\rho_0}\Div\Grad\theta+r
+\end{equation}
+Momentum balance: is not reduced
+\begin{equation}
+  \rho_0\ddot{\Vx}=\Div(\VF\VS(\VE,\theta)) + \rho_0\Vb\label{eq:simomomentum}
+\end{equation}
+\subsubsection{Coupled problem of thermoelasticity:} Equations (\ref{eq:simoenergy})
+(equation of thermal conduction) and (\ref{eq:simomomentum}) (momentum balance)
+together form the coupled problem of thermoelasticity.
+%
+The coupling results from the stress temperature modulus through
+$\VS=\ldots+m\Div\Grad\theta\,\VC^{-1}$
+%
+This thermomechanical coupling is a weak coupling. Operator splitting methods
+can be applied in numerical computations.
+\subsection{Flory's Law}
+Compressible, isotropic, finite elasticity law. In actual configuration:
+\begin{equation}
+  \Btau=2\mu(\det\VF)^{-2/3}\VK^D + k \ln(\det\VF)\VI
+\end{equation}
+In reference configuration:
+\begin{equation}
+  \VS=\mu(\det\VF)^{-2/3}\, \VI+\sbr{k\ln(\det\VF)-
+    \third\mu(\det\VF)^{-2/3}(\VF\cdot\VF)}\VC^{-1}
+\end{equation}
+%
+\subsection{Ideal Gas}
+%
+\subsection{Newtonian Fluid}
+\begin{equation}
+  \VT=-p\,\VI+\VT_E \quad \textrm{with} \quad
+  \VT_E=2\mu\,\VD+\lambda(\VD\cdot\VI)\VI
+\end{equation}
+Energy balance for this:
+\begin{equation}
+  \rho\,\dot{\veps} = -p\, (\VI\cdot\VD)+2\mu\, \VD\cdot\VD
+  +\lambda\,(\VD\cdot\VI)^2 + k\div\grad\theta+\rho\,r
+\end{equation}
+written in terms of invariants, utilizing $\VD\cdot\VD=\UI_D^2-2\rtwo_D$:
+\begin{equation}
+  \rho\,\dot{\veps}=-p\,\UI_D+(2\mu+\lambda)\,\UI_D^2 - 4\mu\,\rtwo_D
+  + k\div\grad\theta + \rho\,r
+\end{equation}
+%
+\subsubsection{Simplification: \emph{R.B.M} and \emph{only-temperature-dependent}
+  internal energy}
+%
+From \eqref{eq:rbm4},
+\begin{equation}
+  \rho\,\dot{\veps} = k \div\grad\theta + \rho\,r
+\end{equation}
+%
+\subsubsection{Simplification: \emph{incompressible fluid} in an
+  \emph{isothermal process}}
+Momentum balance: $\rho\,\ddot{\Vx} = \div\VT + \rho\,b$
+\begin{align}
+\nonumber  \div\VT &= \div(p\,\VI + 2\mu\,\VD) \\
+  &= -\grad p + 2\mu\div(\half(\grad\dot{\Vx}+\grad{}\tra\dot{\Vx}))\\
+  &= -\grad p + \mu\,\div\grad\dot{\Vx}
+\end{align}
+Fact: $\div\grad{}\tra\dot{\Vx}=\grad\div\dot{\Vx} = 0$ because
+$\div\dot{\Vx}=0$ (used above). Hence the balance becomes
+%
+\begin{equation}
+  \rho\,\ddot{\Vx} = -\grad p + \mu\,\div\grad\dot{\Vx} + \rho\,r
+\end{equation}
+Energy balance: $\div\grad\theta=0$ and $\VD\cdot\VI=0$
+\begin{equation}
+  \rho\,\dot{\veps} = 2\mu\,\VD\cdot\VD+\rho\,r
+\end{equation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Geometrically Linear Thermoelasticity}
+%
+%
+\chapter{Geometrically Linear Viscoelasticity}
+%
+\chapter{Geometrically Linear Elastoplasticity}
+%
+\chapter{Appendix}
+For a symmetric matrix $\VA$, $(\VA\cdot\VA\tra)=(\VA\cdot\VA)$. This can be used to
+exploit the second invariant as
+\begin{equation}
+  \rtwo_A=\half((\VA\cdot\VI)^2-\VA\tra\cdot\VA) = \half(\UI_A-\VA\cdot\VA)
+\end{equation}
+Indeed, this has been used while reducing the energy balance for the Newtonian fluid.
+%
+%
+\end{document}
+%

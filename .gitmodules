@@ -1,0 +1,6 @@
+[submodule "lazyeqn"]
+	path = lazyeqn
+	url = https://github.com/hos/lazyeqn
+[submodule "hippopotato"]
+	path = hippopotato
+	url = git://github.com/nrs/hippopotato.git
