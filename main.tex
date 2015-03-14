@@ -15,6 +15,8 @@
 %
 \newcommand{\rtwo}{\UI\hspace{-0.07em}\UI}
 \newcommand{\rthree}{\UI\hspace{-0.07em}\UI\hspace{-0.07em}\UI}
+
+% \setcounter{secnumdepth}{3}
 %
 % \def\mybox#1{\fbox{%
 %     \addtolength{\linewidth}{-2\fboxsep}%
@@ -113,40 +115,358 @@ the methods of continuum mechanics, the lecture offers the following content:
 }
 \chapter{Vector and Tensor Algebra}
 \section{Symbols}
-\begin{tabular}{@{}lll@{}}
-$u_i$ & $\Rightarrow$ & $u_1, u_2, u_3$ \\
-$u_iv_k$ & $\Rightarrow$ & $u_1v_1, u_1v_2, u_1v_3, u_2v_1, u_2v_2, u_2v_3 \ldots$ \\
-$t_{ik}$ & $\Rightarrow$ & $t_{11}, t_{12}, t_{13}, t_{21}, t_{22}, t_{23} \ldots$ \\
-\end{tabular}
+\subsection{Symbols with Single or Multiple Subscripts}
+\begin{alignat}{3}
+\nonumber&u_i         && \Rightarrow && u_1, u_2, u_3 \\
+         &u_iv_k \quad&& \Rightarrow \quad&& u_1v_1, u_1v_2, u_1v_3, u_2v_1, u_2v_2, u_2v_3 \ldots \\
+\nonumber&t_{ik}      && \Rightarrow && t_{11}, t_{12}, t_{13}, t_{21}, t_{22}, t_{23} \ldots
+\end{alignat}
 %
-\section{Einstein's Summation Convention}
-%
-$u_jv_j := \sum\limits_{j=1}^N u_jv_j = u_1v_1 + u_2v_2 + \ldots + u_Nv_N$
-%
-\section{Kronecker (Delta) Symbol}
+\subsection{Einstein's Summation Convention}
+Wherever the same subscript occurs twice in a term, a summation over this
+\emph{dummy} index is defined. Note that no index can occur more than two times.
 %
 \begin{equation}
-  \delta_{ij} = \left\{
+  u_jv_j := \sum\limits_{j=1}^N u_jv_j = u_1v_1 + u_2v_2 + \ldots + u_Nv_N
+\end{equation}
+
+%
+\subsection{Kronecker (Delta) Symbol}
+$\delta_{ik}$ is a symbol with the following properties:
+%
+\begin{equation}
+  \delta_{ik} = \left\{
     \begin{array}{l l}
       1 & \quad \text{if $i=k$}\\
       0 & \quad \text{if $i\neq k$}
     \end{array} \right.
 \end{equation}
 %
+If $\delta_{ik}$ is multiplied with another quantity and if there is a double
+subscript, then $\delta_{ik}$ disappears, the double subscript is dropped and
+the \emph{free} subscript remains.
 %
+\section{Notions and Definitions of Vector Algebra}
+\subsection{Addition of Vectors}
+For $\cbr{\Vu,\Vv,\Vw}\in v^3$, the following relations hold
+%
+\subsection{Multiplication of Vectors with Scalar Quantities}
+%
+\subsubsection{Applications in the Affine Vector Space}
+%
+\paragraph{Linear Dependency of Vectors}
+%
+\paragraph{Basis Vectors in $v^3$}
+%
+\subparagraph{Choice of Special Basis}
+%
+\subparagraph{Representation of $v$}
+%
+\begin{remark}[An Arbitrary Basis System]
+
+\end{remark}
+%
+\subparagraph{Representation of $v$ in Different Basis Systems}
+%
+\subsection{Scalar Product of Vectors (Inner Product)}
+%
+\begin{remark}
+
+\end{remark}
+\subsubsection{Applications in the Proper Euclidean Space}
+\paragraph{Square and Norm of Vectors}
+\paragraph{Angle between Vectors}
+\paragraph{Scalar Product of Basis Vectors}
+\paragraph{Scalar Product of Vectors}
+
+\subsection{Vector Product or Cross Product of Vectors (Outer Product)}
+\subsubsection{Consequences and Applications of the Vector Product}
+\paragraph{The Vector Product in an Orthonormal Frame (Basis)}
+\paragraph{Norm (Value) of the Vector Product}
+\paragraph{Scalar Triple Product}
+
+\section{Notions and Definitions of Tensor Algebra}
+
+\subsection{Introduction of the Concept of a Tensor}
+\subsection{Tensor Product and Dyadic Product Space}
+
+\subsubsection{Basis Notation of a Simple Tensor}
+\subsubsection{Introduction of Arbitrary Tensors $\VT\in v^3 \dyc v^3$}
+
+\subsection{Basic Rules of Tensor Algebra}
+
+\subsubsection{Multiplication of Tensors by Scalars}
+
+\subsubsection{Suppl. 2.2(b)}
+\subsubsection{Linear Mapping of Vectors by Tensors}
+\subsubsection{Scalar Product of Tensors}
+\subsubsection{Tensor Product of Tensors}
+
+\section{Specific Tensors and Operations}
+
+\subsection{Definition of Specific Tensors of 2nd Order}
+\subsubsection{Transposed Tensor}
+\subsubsection{Symmetric and Skew-symmetric Tensors}
+\subsubsection{Inverse Tensors}
+\subsubsection{Orthogonal Tensors}
+\subsubsection{Trace of a Tensor}
+
+\subsection{High Order Tensors}
+
+\paragraph{General Linear Mapping}
+
+\subsubsection{Fundamental Tensors of 4th Order}
+\begin{boxenv}[Properties of 4th Order Fundamental Tensors]
+  \begin{enumerate}
+  \item Identity Map
+  \item Transposing Map
+  \item Tracing Map
+  \end{enumerate}
+\end{boxenv}
+\subsubsection{Specific 4th Order Tensors}
+
+
+\subsection{Fundamental Tensors of 3rd Order}
+
+\subsection{The Axial Vector and the Vector Product of Tensors}
+
+\subsubsection{The Vector Product of Tensors}
+
+\subsubsection{The Outer Tensor Product of Vectors and Tensors}
+
+\subsection{Euler-Rodriguez Tensor of Spatial Rotation}
+
+\subsection{The Outer Tensor Product of Tensors}
+
+\subsubsection{The Cofactor and the Determinant}
+
+\subsubsection{The Inverse Tensor}
+
+\chapter{Fundamentals of Vector and Tensor Analysis}
+
+\section{The Idea of Functions}
+
+\section{Functions of Scalar Variables}
+
+\subsection{Vector-valued Functions of a Single Variable}
+
+\subsection{Vector-valued Functions of Several Variables}
+
+\subsection{Tensor-valued Functions of One or Several Variables}
+
+\subsection{Derivatives of Products of Functions}
+
+\section{Functions of Vectorial and Tensorial Variables}
+
+\subsection{The Gradient Operator}
+
+\subsection{Functions of Arbitrary Vectorial and Tensorial Variables}
+
+\subsection{Specific Operators}
+
+\subsubsection{The Divergence Operator}
+
+\subsubsection{The Rotation Operator}
+
+\subsubsection{The Laplace Operator}
+
+\section{Integral Theorems}
+
+
 \chapter{Kinematics}
 %
+\section{Body, Placement, Motion}
+
+\subsection{The Material Body in Different Configurations}
+
+\subsection{The Placement Function}
+
+\subsection{The Motion of a Body}
+
+\subsection{Displacement, Velocity and Acceleration}
+
+\subsection{The Material Time Derivative}
+
+
+\section{The Deformation Gradient}
+
+\subsection{Transformation of Line Elements}
+
+\subsection{Investigation of the Initial Conditions}
+
+\subsection{Transformation of Area Elements}
+
+\subsection{Transformation of Volume Elements}
+
+\begin{remark}[Time Derivative of the Volume Map]
+  First, the following expression needs to be clarified
+  \begin{equation}
+    \VF\invtra \dtp\dot{\VF} = \VF\invtra\cdot\VL\VF
+    = \VF\invtra\VF\tra\dtp\VL = \VI\dtp\VL =\div\dot{\Vx} \label{eq:detfderiv1}
+  \end{equation}
+  Then, the time derivative of the volume map is expanded as
+  \begin{align}
+\nonumber  \ddt[\det\VF] &= (\det\VF)\dot{}= \deriv{\det\VF}{\VF}\dtp\dot{\VF}=\overset{+}{\VF}\dtp\dot{\VF}\\
+    &= \det\VF \,\underbrace{\VF\invtra\dtp\dot{\VF}}_\text{from \eqref{eq:detfderiv1}}
+      = \det\VF\div\dot{\Vx} \label{eq:detfderiv2}
+  \end{align}
+\end{remark}
+
+\section{Deformation and Strain Measures}
+
+\subsection{The Polar Decomposition Theory}
+
+\subsection{Deformation and Strain Tensors}
+
+\subsection{Deformation and Strain using the Displacement Vector}
+
+\section{Deformation and Strain Rates}
+
+\subsection{Material and Spatial Velocity Gradient}
+
+\subsection{Rate of Deformation and Rate of Rotation Tensors (Spin)}
+
+\subsection{Rate of Deformation and Gyration Tensor}
+
+\subsection{Right and Left Deformation Rates}
+
+\subsection{Velocities of Inverse Measures}
+
+\subsection{Green-Lagrangian and Almansian Strain Rates}
+
+\subsection{Karni-Reiner Strain Rates}
+
+
 \chapter{Stress Concepts}
+
+\section{Volume and Surface Forces}
+
+\section{Stress Tensors}
+
+\subsection{Cauchy's Lemma}
+
+\subsection{Cauchy's Theorem}
+
+\subsection{Stress Tensors in Geometrically Finite Theories}
+
+\subsection{Stress Tensors in Geometrically Linear Theories}
 %
-\chapter{Fundamental Balance Law}
+\chapter{Fundamental Balance Law, a.k.a. Master Balance}
+The master balance relation exhibits the frame of all balance relations in
+continuum mechanics. Generally, there are volume specific scalar $\Psi$ and
+vectorial $\BPsi$ mechanical quantities to be balanced.
 %
+\\Here, scalar quantities $\Psi$ include the mass density $\rho$, internal energy
+$\rho\veps$ and entropy $\rho\eta$. Vectorial quantities $\BPsi$ include the
+momentum $\Vl$ and moment of momentum $\Vh_{(B)}$ where $B$ is an arbitrary but
+spatially finite point.
+
+\section{Global Representation of the Master Balance}
+\begin{subequations}
+  \begin{alignat}{4}
+  &  \ddt\int_\CV\Psi\dv &&= \int_\CS\Bvarphi\dtp\Vn\da &&+ \int_\CV\sigma\dv &&+ \int_\CV\hat{\Psi}\dv\label{eq:globalbalance1}\\
+  &  \ddt\int_\CV\BPsi\dv &&= \int_\CS\BPhi\Vn\da &&+ \int_\CV\Bsigma\dv &&+ \int_\CV\hat{\BPsi}\dv\label{eq:globalbalance2}
+  \end{alignat}
+\end{subequations}
+%
+Therein, the following field functions $\rbdot=\rbdot(\Vx,t)$ are defined.
+%
+\begin{description}
+\item[$\Psi$, $\BPsi$] volume specific mechanical quantities,
+\item[$\Bvarphi\dtp\Vn$, $\BPhi\Vn$] efflux of the mechanical quantity through the
+  surface $\CS$ (action at the vicinity)
+\item[$\sigma$, $\Bsigma$] supply of the mechanical quantity (action from the
+  distance)
+\item[$\hat{\Psi}$, $\hat{\BPsi}$] production of the mechanical quantity
+  (exchange of $\CB$ with the environment of $\CB$)
+\end{description}
+
+\section{Local Representation of the Master Balance}
+The goal is to transform the global balance which is valid for the overall body
+$\CB$ into a local balance valid for each material point $P$.
+
+\subsection{Scalar-valued Mechanical Quantities}
+Investigation of the left hand side of \eqref{eq:globalbalance1} leads to
+%
+\begin{equation}
+  \ddt\int_\CV\Psi\dv=\ddt\int_\CV\Psi\det\VF\dV=\int_\CV\ddt[\Psi\det\VF]\dV
+\end{equation}
+%
+which using chain rule and \eqref{eq:detfderiv2} yields
+%
+\begin{equation}
+  \ddt\int_\CV\Psi\dv=\ddt\int_\CV(\dot{\Psi}\det\VF+\Psi\div\dot{\Vx}\det\VF)\dV
+  = \int_\CV(\dot{\Psi}+\Psi\div\dot{\Vx})\dv
+\end{equation}
+%
+Investigating the first term of the right hand side of \eqref{eq:globalbalance1}
+leads to
+%
+\begin{equation}
+  \int_\CS\Bvarphi\dtp\Vn\da = \int_\CS\Bvarphi\dtp\dif\Va = \int_\CV\div\Bvarphi\dv
+\end{equation}
+%
+Therein, the Gauss Integral Theorem from supplement 3.4(b) was used. Insertion
+of these results back into \eqref{eq:globalbalance1} yields
+%
+\begin{equation}
+  \int_\CV(\dot{\Psi}+\Psi\div\dot{\Vx})\dv = \int_\CV(\div\Bvarphi+\sigma+\hat{\Psi})\dv
+\end{equation}
+%
+In case the integrands of this are steady and sufficiently differentiable, the
+local representation of \eqref{eq:globalbalance1} is rendered as
+%
+\begin{equation}
+  \dot{\Psi}+\Psi\div\dot{\Vx} = \div\Bvarphi+\sigma+\hat{\Psi}
+\end{equation}
+
+\subsection{Vector-valued Mechanical Quantities}
+Analogously to the above procedure, one obtains
+%
+\begin{equation}
+  \dot{\BPsi}+\BPsi\div\dot{\Vx} = \div \BPhi + \Bsigma + \hat{\BPsi}
+\end{equation}
+%
+\chapter{Axiomatic Balance Relations of Mechanics}
+
+\section{Balance of Mass}
+
+\section{Balance of (Linear) Momentum}
+
+\section{Balance of Moment of Momentum (Angular Momentum)}
+
+\section{Balance of Mechanical Energy}
+
+\chapter{Stress Power and Conjugate Variables}
+
+\section{Volume Specific Stress Power}
+
+\subsection{Alternative Representations of the Specific Stress Power}
+\subsubsection{Spatial and Referential Representations}
+
+\section{The Concept of Conjugate Variables}
+\subsection{The 1D Geometrically Linear Case}
+\subsection{The 3D  General Case}
+
+\subsubsection{In the Reference Frame}
+\subsubsection{In the Spatial Frame}
+\section{Balance of Mechanical Energy in Conservative Systems}
+\section{Internal Stresses in Conservative Systems}
+\section{External Forces in Conservative Systems}
+
+\chapter{d'Alembert's Principle and the Principle of Virtual Work}
+\section{d'Alembert's Principle}
+
+\chapter{Numerical Aspects of Continuum Mechanics}
+
+
 \chapter{Closure Problem}
 %
 %
 \rule{0.3\linewidth}{0.25pt}
 End of semester 1
 %
-\chapter{Thermodynamical Balance Laws}
+\chapter{Axiomatic Balance Relations of Thermodynamics}
 \section{Balance of Energy}
 %
 \begin{equation}
@@ -254,7 +574,8 @@ Legendre transformation:
 \end{equation}
 Consequence:
 \begin{equation}
-\dot{\zeta}(\rhoz\VS,\eta) = \partd{\zeta}{\rhoz\VS}\cdot+\partd{\zeta}{\eta}\dot{\eta}
+\dot{\zeta}(\rhoz\VS,\eta) = \partd{\zeta}{\rhoz\VS}\cdot(\rhoz\VS)\dot{}
++\partd{\zeta}{\eta}\dot{\eta}
 = - \VE \cdot \rhoz\dot{\VS}+\theta\dot{\eta}
 \end{equation}
 where $\theta=\partd{\veps}{\eta}=\partd{\zeta}{\eta}$ and
